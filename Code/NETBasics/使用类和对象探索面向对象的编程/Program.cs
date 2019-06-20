@@ -10,6 +10,7 @@ namespace 使用类和对象探索面向对象的编程
     {
         static void Main(string[] args)
         {
+          int a=  Console.WindowHeight;
         }
     }
 }
