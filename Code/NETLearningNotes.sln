@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "使用类和对象探索面向对象的编程", "NETBasics\使用类和对象探索面向对象的编程\使用类和对象探索面向对象的编程.csproj", "{05B73547-168C-4313-915F-395303F05820}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NETBasics", "NETBasics", "{AB523D86-EB43-4A2A-9ADC-188754DD7D93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05B73547-168C-4313-915F-395303F05820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B73547-168C-4313-915F-395303F05820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B73547-168C-4313-915F-395303F05820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B73547-168C-4313-915F-395303F05820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05B73547-168C-4313-915F-395303F05820} = {AB523D86-EB43-4A2A-9ADC-188754DD7D93}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFB079CA-EFD3-431C-ABD4-BB20C6AE184A}
+	EndGlobalSection
+EndGlobal
