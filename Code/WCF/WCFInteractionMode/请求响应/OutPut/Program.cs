@@ -12,7 +12,8 @@ namespace Output
         static void Main(string[] args)
         {
             try
-            {
+            {        //使用说明先启动input，然后在启动启动output。
+                //记得使用管理员启动VS，我在程序清单中添加了管理员权限。
                 //创建自定义通道
                 BindingElement[] bindingElements = new BindingElement[2];
                 bindingElements[0] = new TextMessageEncodingBindingElement();//文本编码
