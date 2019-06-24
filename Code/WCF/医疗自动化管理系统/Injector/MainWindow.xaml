@@ -1,0 +1,17 @@
+﻿<Window x:Class="Injector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Injector"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+        <TextBlock Text="服务器发送数据:"></TextBlock>
+            <TextBlock x:Name="tb_response"></TextBlock>
+            <Button Content="调用服务器端返回为true的函数" Click="Button_Click"/>
+            <Button Content="调用返回为false的函数" Click="Button_Click_1"/>
+        </StackPanel>
+    </Grid>
+</Window>
