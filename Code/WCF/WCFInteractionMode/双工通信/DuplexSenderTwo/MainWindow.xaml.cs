@@ -32,8 +32,9 @@ namespace DuplexSenderTwo
                 IChannelFactory<IDuplexChannel> factory = binding.BuildChannelFactory<IDuplexChannel>(new BindingParameterCollection());
                 factory.Open();//打开通道工厂
                                //创建IrequestChannel
-                IDuplexChannel duplexChannel = factory.CreateChannel(new EndpointAddress("net.tcp://localhost:9090/DuplexService/Pouint2"));
+                IDuplexChannel duplexChannel = factory.CreateChannel(new EndpointAddress("net.tcp://localhost:9090/DuplexService/Point2"));
                 duplexChannel.Open();//打开通道
+              
             }
             catch (Exception ex)
             { }
