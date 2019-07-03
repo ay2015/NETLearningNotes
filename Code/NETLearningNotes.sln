@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "通道形状改变", "通�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelShapeChange", "WCF\WCFInteractionMode\通道形状变化\ChannelShapeChange\ChannelShapeChange.csproj", "{42ED0460-BF18-42EA-BD96-C2A3F15E01C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "模拟按键", "NETBasics\按键模拟\模拟按键\模拟按键.csproj", "{FB4DA725-E01A-45EC-BB1F-958F59497632}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{42ED0460-BF18-42EA-BD96-C2A3F15E01C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42ED0460-BF18-42EA-BD96-C2A3F15E01C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42ED0460-BF18-42EA-BD96-C2A3F15E01C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB4DA725-E01A-45EC-BB1F-958F59497632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB4DA725-E01A-45EC-BB1F-958F59497632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB4DA725-E01A-45EC-BB1F-958F59497632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB4DA725-E01A-45EC-BB1F-958F59497632}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +143,7 @@ Global
 		{BDA8633B-59C8-4101-BEB0-96E0ADE08C8F} = {25C6148C-5BE9-4DC9-9123-5B45E22792DA}
 		{33B2AE7C-7601-4070-9997-D37F6DC9322D} = {64133EEA-92B8-4E47-AFD2-87B2045CB306}
 		{42ED0460-BF18-42EA-BD96-C2A3F15E01C4} = {33B2AE7C-7601-4070-9997-D37F6DC9322D}
+		{FB4DA725-E01A-45EC-BB1F-958F59497632} = {AB523D86-EB43-4A2A-9ADC-188754DD7D93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AFB079CA-EFD3-431C-ABD4-BB20C6AE184A}
