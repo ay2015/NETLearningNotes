@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29009.5
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "使用类和对象探索面向对象的编程", "NETBasics\使用类和对象探索面向对象的编程\使用类和对象探索面向对象的编程.csproj", "{05B73547-168C-4313-915F-395303F05820}"
 EndProject
@@ -50,6 +50,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelShapeChange", "WCF\WCFInteractionMode\通道形状变化\ChannelShapeChange\ChannelShapeChange.csproj", "{42ED0460-BF18-42EA-BD96-C2A3F15E01C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "模拟按键", "NETBasics\按键模拟\模拟按键\模拟按键.csproj", "{FB4DA725-E01A-45EC-BB1F-958F59497632}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlendExample", "BlendExample", "{F6163819-FE40-4A0F-8010-CE96CE5C7199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlendExample", "Blend\BlendExample\BlendExample.csproj", "{4A6FC193-5D0F-4694-9D8B-9AC2BAC70165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +121,10 @@ Global
 		{FB4DA725-E01A-45EC-BB1F-958F59497632}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB4DA725-E01A-45EC-BB1F-958F59497632}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB4DA725-E01A-45EC-BB1F-958F59497632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A6FC193-5D0F-4694-9D8B-9AC2BAC70165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A6FC193-5D0F-4694-9D8B-9AC2BAC70165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A6FC193-5D0F-4694-9D8B-9AC2BAC70165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A6FC193-5D0F-4694-9D8B-9AC2BAC70165}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +152,7 @@ Global
 		{33B2AE7C-7601-4070-9997-D37F6DC9322D} = {64133EEA-92B8-4E47-AFD2-87B2045CB306}
 		{42ED0460-BF18-42EA-BD96-C2A3F15E01C4} = {33B2AE7C-7601-4070-9997-D37F6DC9322D}
 		{FB4DA725-E01A-45EC-BB1F-958F59497632} = {AB523D86-EB43-4A2A-9ADC-188754DD7D93}
+		{4A6FC193-5D0F-4694-9D8B-9AC2BAC70165} = {F6163819-FE40-4A0F-8010-CE96CE5C7199}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AFB079CA-EFD3-431C-ABD4-BB20C6AE184A}
