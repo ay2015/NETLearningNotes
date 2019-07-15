@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="btn" Click="Button_Click" Width="130" Height="30"/>
+        <StackPanel>
+            <CheckBox x:Name="xiaoyao">逍遥</CheckBox>
+        </StackPanel>
+
+        <TextBlock Text="F11启动"/>
     </Grid>
 </Window>

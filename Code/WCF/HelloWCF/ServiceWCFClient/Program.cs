@@ -14,6 +14,8 @@ namespace ServiceWCFClient
         {
             using (HelloWCFProxy proxy = new HelloWCFProxy())
             {
+                //https://docs.microsoft.com/zh-cn/previous-versions/dotnet/netframework-3.5/ms730128(v=vs.90)
+                //WCF学习资料
                 Console.WriteLine(proxy.HelloWCF("WCF"));//利用代理调用服务
                 Console.Read();
             }

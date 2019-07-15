@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Forms;
 
 namespace 模拟按键
 {
@@ -24,17 +14,42 @@ namespace 模拟按键
     public partial class MainWindow : Window
     {
         Dm.dmsoft dm = new Dm.dmsoft();
-      
+        KeyboardHook k_hook = new KeyboardHook();
+        int hwnd = -1;
         public MainWindow()
         {
             InitializeComponent();
             AutoRegCom("regsvr32 -s dm.dll");
-           
+            //2.安装Hook，在程序入口中写上下面的代码（本例中用了WinForm，在Form的构造方法中安装Hook即可） 
+            //安装键盘钩子 
+
+            k_hook.KeyDownEvent += new KeyEventHandler(hook_KeyDown);//钩住键按下 
+            hwnd = dm.GetMousePointWindow();
+            dm.BindWindow(hwnd, "dx", "一笑倾城 - 扛不住怪我咯","",0);
+            k_hook.Start();//安装键盘钩子
         }
+
+        private void hook_KeyDown(object sender, KeyEventArgs e)
+        {
+            //判断按下的键（Alt + A） 
+            if (e.KeyValue == (int)Keys.F11)
+            {
+                start();
+            }
+            if (e.KeyValue == (int)Keys.F12)
+            {
+                stop();
+            }
+        }
+
+        private void stop()
+        {
+
+        }
+
         static string AutoRegCom(string strCmd)
         {
             string rInfo;
-             
             try
             {
                 Process myProcess = new Process();
@@ -57,9 +72,27 @@ namespace 模拟按键
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void start()
         {
-            dm.MoveTo(30, 30);
+            Task.Factory.StartNew(() =>
+            {
+
+                object X = 0, Y = 0;
+
+                dm.SetPath("d:\\path");
+                dm.SetDict(0, "test.txt");
+
+                dm.FindPic(0, 0, 400, 400, "xiaoyao.bmp", "000000", 0.9, 0, out X, out Y);
+                dm.FindStr(900, 600, 1183, 750, "购买", "f3eadc-777777", 1.0, out X, out Y);
+                dm.MoveTo((int)X, (int)Y);
+
+                Debug.WriteLine($"{X},{Y}");
+
+                Thread.Sleep(1011);
+                int result = dm.LeftDoubleClick();
+
+            });
+
         }
     }
 
