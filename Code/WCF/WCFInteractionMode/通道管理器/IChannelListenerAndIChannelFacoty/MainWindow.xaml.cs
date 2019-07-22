@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IChannelListenerAndIChannelFacoty.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -26,12 +27,20 @@ namespace IChannelListenerAndIChannelFacoty
         public MainWindow()
         {
             InitializeComponent();
-            binding = new NetTcpBinding();//创建绑定
-            IChannelFactory<IRequestChannel> factory = binding.BuildChannelFactory<IRequestChannel>(new BindingParameterCollection());
-            factory.Open();//打开ChannelFactory
-            //这里创建IRequestChannel
-            IRequestChannel requestChannel = factory.CreateChannel(new EndpointAddress("http://localhost:9090/RequestReplyService"));
+           
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            IChannelListenerPage listenerPage = new IChannelListenerPage();
+            listenerPage.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            IChannelFactoryPage factoryPage = new IChannelFactoryPage();
+            factoryPage.Show();
         }
     }
 }

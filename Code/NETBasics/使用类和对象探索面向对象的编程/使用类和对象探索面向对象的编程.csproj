@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>使用类和对象探索面向对象的编程</RootNamespace>
     <AssemblyName>使用类和对象探索面向对象的编程</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
