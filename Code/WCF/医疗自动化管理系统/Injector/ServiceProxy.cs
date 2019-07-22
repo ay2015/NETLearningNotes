@@ -23,7 +23,10 @@ namespace Injector
 
         public bool test1()
         {
+         
+            System.Diagnostics.Debug.WriteLine(State);
             return base.Channel.test1();
+
         }
     }
 }
