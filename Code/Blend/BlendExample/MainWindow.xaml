@@ -6,7 +6,67 @@
         xmlns:local="clr-namespace:BlendExample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="grid">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF000011"/>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#01000011"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.9"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.01"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="TextBlockStyle1" TargetType="{x:Type TextBlock}">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+            </Style.Triggers>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+        </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#1F26A0DA"/>
+        <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da"/>
+        <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA"/>
+        <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA"/>
+        <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA"/>
+        <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA"/>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <StackPanel Orientation="Horizontal"></StackPanel>
+        </ItemsPanelTemplate>
+
+    </Window.Resources>
+
+    <Grid x:Name="grid">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button x:Name="button" Content="查看VisualStateManager的例子" Height="50" Width="200"  Margin="3"/>
+
+            <TextBlock  FontSize="30" Text="kjfsaldkgjasdasd阿萨司法所阿萨德阿萨德打算打算的sd" Background="Red">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#2DABF9" Offset="0"/>
+                        <GradientStop Color="#76DAFF" Offset="0.8"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Black" Direction="0" ShadowDepth="1" Opacity="1"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <ListBox ItemsPanel="{DynamicResource ItemsPanelTemplate1}">
+                <ListBoxItem>1111</ListBoxItem>
+                <ListBoxItem>1111</ListBoxItem>
+                <ListBoxItem>1111</ListBoxItem>
+                <ListBoxItem>1111</ListBoxItem>
+            </ListBox>
+            <TextBox Height="120" IsHitTestVisible="False"> ljflkajslkgsadgasd</TextBox>
+        </StackPanel>
     </Grid>
 </Window>

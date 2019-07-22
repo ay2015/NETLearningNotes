@@ -48,6 +48,7 @@ namespace Injector
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             tb_response.Text = proxy.test1().ToString();
+           
 
         }
     }
