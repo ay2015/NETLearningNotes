@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -23,20 +24,25 @@ namespace tensorflowNovice.Controls
 
         public void Load()
         {
+            Int64 startTime = Stopwatch.GetTimestamp();//获取计时器机制中当前时间的最小单位数　可以理解为时钟周期
             dir = "tmp";
             List<string> files = Directory.GetFiles("img").ToList();
             ModelFiles(dir);
+            Console.WriteLine($"Load Image {files.Count}number  taking:{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}"  );// 获取以每秒计时周期数表示的计时器频率。此字段为只读
+            Console.WriteLine($"start Init TFGraph :{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}");// 获取以每秒
             var graph = new TFGraph();
             // 从文件加载序列化的GraphDef
             var model = File.ReadAllBytes(modelFile);
             //导入GraphDef
             graph.Import(model, "");
+            Console.WriteLine($"end Init TFGraph :{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}");// 获取以每秒
+
             using (var session = new TFSession(graph))
             {
                 var labels = File.ReadAllLines(labelsFile);
-                Console.WriteLine("TensorFlow图像识别 LineZero");
-                foreach (var file in files)
+                 foreach (var file in files)
                 {
+                    Console.WriteLine($"start TensorFlow图像识别 LineZero :{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}");// 获取以每秒 
                     // Run inference on the image files
                     // For multiple images, session.Run() can be called in a loop (and
                     // concurrently). Alternatively, images can be batched since the model
@@ -101,10 +107,11 @@ namespace tensorflowNovice.Controls
                     }
 
                     Console.WriteLine($"{Path.GetFileName(file)} 最佳匹配: [{bestIdx}] {best * 100.0}% 标识为：{labels[bestIdx]}");
+                    Console.WriteLine("end TensorFlow图像识别 LineZero" + (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency);// 获取以每秒计时周期数表示的计时器频率。此字段为只读
+
                 }
             }
-             
-
+          
         }
 
         // Convert the image in filename to a Tensor suitable as input to the Inception model.
