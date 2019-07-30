@@ -29,5 +29,10 @@ namespace BlendExample
             //包含关系
             //VSM-States-StoryBorad-Duration
         }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("111");
+        }
     }
 }
