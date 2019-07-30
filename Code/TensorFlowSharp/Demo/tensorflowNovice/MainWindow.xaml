@@ -1,0 +1,31 @@
+﻿<Window x:Class="tensorflowNovice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tensorflowNovice"
+        xmlns:controls="clr-namespace:tensorflowNovice.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left">
+            <TextBlock Text="请输入2个数字"/>
+            <TextBox x:Name="tb_one"/>
+            <TextBox x:Name="tb_two"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="结果:"/>
+                <TextBlock  x:Name="tb_content"/>
+            </StackPanel>
+            <Button x:Name="btn_calculator" Width="120"  Content="计算" Click="Btn_calculator_Click"/>
+            <Button x:Name="btn_MoverImageRecognition" Content="图像识别示例体验" Click="Btn_MoverImageRecognition_Click"/>
+        </StackPanel>
+        <Grid Grid.Column="1" x:Name="grid_column1">
+            <controls:ImageRecognitionControl></controls:ImageRecognitionControl>
+        </Grid>
+
+    </Grid>
+</Window>
