@@ -24,11 +24,13 @@ namespace tensorflowNovice.Controls
 
         public void Load()
         {
+            var num = 1 * 1 + 2 * 2 + 3 * 3 + 4 * 4 + 5 * 5;
+            Debug.WriteLine(num);
             Int64 startTime = Stopwatch.GetTimestamp();//获取计时器机制中当前时间的最小单位数　可以理解为时钟周期
             dir = "tmp";
             List<string> files = Directory.GetFiles("img").ToList();
             ModelFiles(dir);
-            Console.WriteLine($"Load Image {files.Count}number  taking:{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}"  );// 获取以每秒计时周期数表示的计时器频率。此字段为只读
+            Console.WriteLine($"Load Image {files.Count}number  taking:{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}");// 获取以每秒计时周期数表示的计时器频率。此字段为只读
             Console.WriteLine($"start Init TFGraph :{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}");// 获取以每秒
             var graph = new TFGraph();
             // 从文件加载序列化的GraphDef
@@ -40,7 +42,7 @@ namespace tensorflowNovice.Controls
             using (var session = new TFSession(graph))
             {
                 var labels = File.ReadAllLines(labelsFile);
-                 foreach (var file in files)
+                foreach (var file in files)
                 {
                     Console.WriteLine($"start TensorFlow图像识别 LineZero :{ (Stopwatch.GetTimestamp() - startTime) / (double)Stopwatch.Frequency}");// 获取以每秒 
                     // Run inference on the image files
@@ -111,7 +113,7 @@ namespace tensorflowNovice.Controls
 
                 }
             }
-          
+
         }
 
         // Convert the image in filename to a Tensor suitable as input to the Inception model.
